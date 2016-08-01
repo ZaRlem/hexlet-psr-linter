@@ -8,4 +8,4 @@ lint:
 	composer exec 'phpcs --standard=PSR2 src tests'
 
 test:
-composer exec 'phpunit tests'
+	composer exec 'phpunit tests'
