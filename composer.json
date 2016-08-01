@@ -1,6 +1,5 @@
 {
   "name": "hexlet-psr-linter",
-  "version":"1.0.0",
   "bin": ["bin/php-package"],
   "type": "library",
   "authors": [
