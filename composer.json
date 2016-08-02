@@ -1,7 +1,7 @@
 {
   "name": "hexlet-psr-linter",
   "bin": ["bin/php-package"],
-  "type": "library",
+  "type": "project",
   "authors": [
     {
       "name": "Zakhar Shelemin",
@@ -13,9 +13,7 @@
       "PhpPackage\\": "src/"
     }
   },
-  "require": {
-  "php":">=7.0"
-  },
+  "require": {},
   "require-dev": {
     "phpunit/phpunit": "*",
     "squizlabs/php_codesniffer": "*",
