@@ -1,11 +1,13 @@
 <?php
 
-namespace hexlet-psr-linter;
+namespace hexletPsrLinter;
 
 class LinterTest extends \PHPUnit_Framework_TestCase
 {
-    public function test()
+    public function testGetName()
     {
-        $this->assertTrue(true);
+        $name = 'john';
+        $user = new User($name);
+        $this->assertEquals($name, $user->getName());
     }
 }
