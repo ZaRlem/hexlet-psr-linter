@@ -1,5 +1,8 @@
-mespace hexlet-psr-linter; 
-class User
+<?php
+
+namespace hexlet-psr-linter; 
+
+class Linter
 {
     private $name;
     public function __construct($name)
