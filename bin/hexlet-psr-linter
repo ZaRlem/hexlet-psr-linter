@@ -4,6 +4,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-echo 'what is your name?: ';
+echo 'Enter please linter name: ';
 $name = trim(fgets(STDIN));
-$user = new PhpPackage\User($name);
+$user = new HexletPsrLinter\Linter($name);
+echo $name . "\n"; 

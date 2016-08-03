@@ -1,6 +1,6 @@
 <?php
 
-namespace hexletPsrLinter;
+namespace HexletPsrLinter;
 
 class LinterTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,7 +1,7 @@
 {
   "name": "hexlet-psr-linter",
   "type": "project",
-  "bin": ["bin/php-package"],
+  "bin": ["bin/hexlet-psr-linter"],
   "authors": [
     {
       "name": "Zakhar Shelemin",
@@ -10,7 +10,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "PhpPackage\\": "src/"
+      "HexletPsrLinter\\": "src/"
     }
   },
   "require": {},

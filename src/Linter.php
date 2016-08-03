@@ -1,6 +1,6 @@
 <?php
 
-namespace hexletPsrLinter;
+namespace HexletPsrLinter;
 
 class Linter
 {
