@@ -1,6 +1,5 @@
 {
   "name": "hexlet-psr-linter",
-  "bin": ["bin/php-package"],
   "type": "project",
   "authors": [
     {
@@ -19,4 +18,5 @@
     "squizlabs/php_codesniffer": "*",
     "codeclimate/php-test-reporter": "dev-master"
   }
+  "bin": ["bin/php-package"]
 }
