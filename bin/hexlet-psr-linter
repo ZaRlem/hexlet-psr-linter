@@ -4,7 +4,17 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-echo 'Enter please linter name: ';
-$name = trim(fgets(STDIN));
-$user = new HexletPsrLinter\Linter($name);
-echo $name . "\n"; 
+use function HexletPsrLinter\lint;
+
+$code =  <<<'CODE'
+<?php
+
+function printLine($msg) {
+    echo $msg, "\n";
+}
+
+printLine('Hello World!!!');
+CODE;
+
+$result = lint($code);
+print_r($result);

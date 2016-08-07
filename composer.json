@@ -11,9 +11,16 @@
   "autoload": {
     "psr-4": {
       "HexletPsrLinter\\": "src/"
-    }
+    },
+  "files": [
+          "src/Linter.php",
+          "src/MyNodeVisitor.php",
+          "src/rulesChecking.php"
+        ]
   },
-  "require": {},
+  "require": {
+    "nikic/php-parser": "*"
+  },
   "require-dev": {
     "phpunit/phpunit": "*",
     "squizlabs/php_codesniffer": "*",

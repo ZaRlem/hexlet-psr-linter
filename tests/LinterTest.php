@@ -1,28 +1,27 @@
 <?php
 
-namespace HexletPsrLinter;
 require_once __DIR__ . '/../vendor/autoload.php';
+
+use function HexletPsrLinter\lint;
+
 
 class LinterTest extends \PHPUnit_Framework_TestCase
 {
-    private $pathRightFile = "/tests/fixtures/rigthCase.php";
-    private $pathWrongFile = "/tests/fixtures/wrongCase.php";
+    private $pathRightFile = __DIR__ . "/fixtures/rightCase.php";
+    private $pathWrongFile = __DIR__ . "/fixtures/rightCase.php";
 
-    public function readFile($path)
-    {
-       if(file_exists($path)){
-       return file_get_contents($path);
-       } else {
-        return false;
-       }
+    public function testLinter(){
+    //$wrongCode = file_get_contents($this->pathRightFile);
+    //$rightCode = file_get_contents($this->pathWrongFile);
+
+    $wrongCode = '<?php function get_Amount() {  return amount;} function negate(){
+        return new Money(-1 * amount);
+    }';
+    $rirhtCode = '<?php function getAmount() {  return amount;} function negate(){
+        return new Money(-1 * amount);
+    }';
+
+    $this->assertEquals('Method names MUST be declared in camelCase.', lint($wrongCode));
+    $this->assertEquals(null, lint($rirhtCode));
     }
-     public function testLinter(){
-       $wrongCode = $this->readFile($this->pathRightFile);
-       $rightCode = $this->readFile($this->pathWrongFile);
-       $linter1 = new Linter($wrongCode);
-       $this->assertTrue($linter1->validate());
-
-       $linter2 = new Linter($rightCode);
-       $this->assertTrue($linter2->validate());
-     }
 }
