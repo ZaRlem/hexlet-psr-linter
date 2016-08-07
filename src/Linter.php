@@ -4,13 +4,13 @@ namespace HexletPsrLinter;
 
 class Linter
 {
-    private $name;
-    public function __construct($name)
+
+    public function __construct($code)
     {
-        $this->name = $name;
+        $this->code = $code;
     }
-    public function getName()
+    public function validate()
     {
-        return $this->name;
+      return true;
     }
 }
