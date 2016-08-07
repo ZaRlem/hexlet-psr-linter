@@ -1,7 +1,6 @@
 {
   "name": "hexlet-psr-linter",
   "type": "project",
-  "bin": ["bin/hexlet-psr-linter"],
   "authors": [
     {
       "name": "Zakhar Shelemin",
@@ -19,11 +18,13 @@
         ]
   },
   "require": {
-    "nikic/php-parser": "*"
+    "nikic/php-parser": "*",
+    "nategood/commando": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "*",
     "squizlabs/php_codesniffer": "*",
     "codeclimate/php-test-reporter": "dev-master"
-  }
+  },
+  "bin": ["bin/hexlet-psr-linter"]
 }

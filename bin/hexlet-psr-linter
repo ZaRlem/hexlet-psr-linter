@@ -6,15 +6,14 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use function HexletPsrLinter\lint;
 
-$code =  <<<'CODE'
+$code = '
 <?php
 
 function printLine($msg) {
     echo $msg, "\n";
 }
 
-printLine('Hello World!!!');
-CODE;
+printLine("Hello World!!!");';
 
 $result = lint($code);
 print_r($result);
