@@ -29,7 +29,7 @@ class LinterTest extends \PHPUnit_Framework_TestCase
           return new Money(-1 * amount);
           };';
 
-        $this->assertEquals('Method names MUST be declared in camelCase.', lint($wrongCode));
-        $this->assertEquals(null, lint($rightCode));
+        $this->assertTrue(!empty(lint($wrongCode)));
+        $this->assertTrue(empty(lint($rightCode)));
     }
 }

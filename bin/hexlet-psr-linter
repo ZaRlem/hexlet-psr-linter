@@ -9,11 +9,11 @@ use function HexletPsrLinter\lint;
 $code = '
 <?php
 
-function printLine($msg) {
+function print_Line($msg) {
     echo $msg, "\n";
 }
 
 printLine("Hello World!!!");';
 
 $result = lint($code);
-print_r($result);
+var_dump($result);

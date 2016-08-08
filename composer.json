@@ -13,8 +13,9 @@
     },
   "files": [
           "src/Linter.php",
-          "src/MyNodeVisitor.php",
-          "src/rulesChecking.php"
+          "src/NodeVisitor.php",
+          "src/checkers/CheckerInterface.php",
+          "src/checkers/FunctionChecker.php"
         ]
   },
   "require": {

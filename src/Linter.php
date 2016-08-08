@@ -13,7 +13,7 @@ function lint($code)
 
     $parser = (new ParserFactory)->create(ParserFactory::PREFER_PHP7);
     $traverser = new NodeTraverser;
-    $nodeVisitor = new MyNodeVisitor;
+    $nodeVisitor = new NodeVisitor;
     $traverser->addVisitor($nodeVisitor);
     try {
         $stmts = $parser->parse($code);
