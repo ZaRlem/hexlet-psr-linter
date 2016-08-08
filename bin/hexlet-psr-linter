@@ -5,15 +5,12 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use function HexletPsrLinter\lint;
+use function HexletPsrLinter\getFilePath;
 
-$code = '
-<?php
-
-function print_Line($msg) {
-    echo $msg, "\n";
+$pathArray = getFilePath();
+if($pathArray[0]){
+    $code = file_get_contents($pathArray[0]);
 }
-
-printLine("Hello World!!!");';
 
 $result = lint($code);
 var_dump($result);

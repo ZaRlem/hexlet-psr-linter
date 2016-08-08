@@ -4,12 +4,12 @@ namespace HexletPsrLinter\Checker;
 
 class FunctionChecker implements CheckerInterface
 {
-    private $errors = [];
-
+  
     public function isAcceptable($node)
     {
-        if($node instanceof \PhpParser\Node\Stmt\Function_){
-          return true;
+        if($node instanceof \PhpParser\Node\Stmt\Function_ ||
+        $node instanceof \PhpParser\Node\Stmt\ClassMethod){
+        return true;
         }
     }
     public function validate($node)
