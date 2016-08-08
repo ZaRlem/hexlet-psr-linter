@@ -15,6 +15,7 @@
           "src/Linter.php",
           "src/NodeVisitor.php",
           "src/cmd.php",
+          "src/printErrors.php",
           "src/checkers/CheckerInterface.php",
           "src/checkers/FunctionChecker.php"
         ]

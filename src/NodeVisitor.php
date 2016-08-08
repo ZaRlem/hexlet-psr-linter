@@ -5,7 +5,6 @@ use PhpParser\Node;
 use PhpParser\NodeVisitorAbstract;
 use HexletPsrLinter\Checker\FunctionChecker;
 
-
 class NodeVisitor extends NodeVisitorAbstract
 {
     private $errors = [];

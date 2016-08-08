@@ -6,11 +6,13 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use function HexletPsrLinter\lint;
 use function HexletPsrLinter\getFilePath;
+use function HexletPsrLinter\printErrors;
 
-$pathArray = getFilePath();
-if($pathArray[0]){
-    $code = file_get_contents($pathArray[0]);
+$path = getFilePath()[0];
+if($path){
+    $code = file_get_contents($path);
 }
 
-$result = lint($code);
-var_dump($result);
+$errors = lint($code);
+
+printErrors($path, $errors);
