@@ -4,15 +4,20 @@ namespace HexletPsrLinter;
 
 function printErrors($path, $errors)
 {
-      echo "\n File: $path \n \n";
-
-    if ($errors) {
+    if (!$errors) {
+        echo "\n File: $path is valide \n";
+        return true;
+    }
+    if (is_array($errors) && !empty($errors)) {
+        echo "\n File: $path \n \n";
         foreach ($errors as $row) {
-            foreach ($row as $value) {
-                if (is_int($value)) {
-                    printf("%5d", $value);
-                } else {
-                    echo "    $value";
+            if (is_array($row) && !empty($row)) {
+                foreach ($row as $value) {
+                    if (is_int($value)) {
+                        printf("%5d", $value);
+                    } else {
+                        echo "    $value";
+                    }
                 }
             }
             echo "\n";

@@ -4,6 +4,7 @@ namespace HexletPsrLinter\Checker;
 
 class FunctionChecker implements CheckerInterface
 {
+    private $errors = [];
 
     public function isAcceptable($node)
     {
@@ -15,9 +16,16 @@ class FunctionChecker implements CheckerInterface
     public function validate($node)
     {
         if (!\PHP_CodeSniffer::isCamelCaps($node->name)) {
-            return [$node->getLine(),
+            $this->errors = [$node->getLine(),
                 'Warning',
                 'Function names must be declared in camelCase.'];
+        }
+        return true;
+    }
+    public function getErrors()
+    {
+        if (!empty($this->errors)) {
+            return $this->errors;
         }
     }
 }
