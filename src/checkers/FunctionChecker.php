@@ -15,10 +15,10 @@ class FunctionChecker implements CheckerInterface
     public function validate($node)
     {
         if (!\PHP_CodeSniffer::isCamelCaps($node->name)) {
-            $line = $node->getLine();
-            $errorType = 'Warning';
-            $errorText = 'Function names must be declared in camelCase.';
-            return(compact('line', 'errorType', 'errorText'));
+            
+            return [$node->getLine(),
+                'Warning',
+                'Function names must be declared in camelCase.'];
         }
     }
 }

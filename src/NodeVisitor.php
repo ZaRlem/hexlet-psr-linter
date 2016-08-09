@@ -13,9 +13,7 @@ class NodeVisitor extends NodeVisitorAbstract
     {
         $checker = new FunctionChecker;
         if ($checker->isAcceptable($node)) {
-            if ($checker->validate($node)) {
-                $this->errors[] = $checker->validate($node);
-            }
+            $this->errors[] = $checker->validate($node);
         }
     }
     public function getErrors()
