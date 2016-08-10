@@ -4,7 +4,15 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-echo 'Enter please linter name: ';
-$name = trim(fgets(STDIN));
-$user = new HexletPsrLinter\Linter($name);
-echo $name . "\n"; 
+use function HexletPsrLinter\lint;
+use function HexletPsrLinter\getFilePath;
+use function HexletPsrLinter\printErrors;
+
+$path = getFilePath()[0];
+if($path){
+    $code = file_get_contents($path);
+}
+
+$errors = lint($code);
+
+printErrors($path, $errors);

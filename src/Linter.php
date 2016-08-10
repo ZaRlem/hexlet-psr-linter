@@ -2,15 +2,25 @@
 
 namespace HexletPsrLinter;
 
-class Linter
+use PhpParser\Error;
+use PhpParser\ParserFactory;
+use PhpParser\NodeTraverser;
+use HexletPsrLinter\MyNodeVisitor;
+
+function lint($code)
 {
-    private $name;
-    public function __construct($name)
-    {
-        $this->name = $name;
+    $errors = [];
+
+    $parser = (new ParserFactory)->create(ParserFactory::PREFER_PHP7);
+    $traverser = new NodeTraverser;
+    $nodeVisitor = new NodeVisitor;
+    $traverser->addVisitor($nodeVisitor);
+    try {
+        $stmts = $parser->parse($code);
+        $stmts = $traverser->traverse($stmts);
+        $errors = $nodeVisitor->getErrors();
+    } catch (Error $e) {
+        $errors[] = "Parse Error: , $e->getMessage()";
     }
-    public function getName()
-    {
-        return $this->name;
-    }
+    return $errors;
 }
