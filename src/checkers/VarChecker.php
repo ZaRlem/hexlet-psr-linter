@@ -2,7 +2,7 @@
 
 namespace HexletPsrLinter\Checker;
 
-class FunctionChecker implements CheckerInterface
+class VarChecker implements CheckerInterface
 {
     private $errors = [];
 
@@ -11,7 +11,7 @@ class FunctionChecker implements CheckerInterface
         if (!\PHP_CodeSniffer::isCamelCaps($node->name)) {
             $this->errors = [$node->getLine(),
                 'Warning',
-                'Function names must be declared in camelCase.'];
+                'Variable names must be declared in camelCase.'];
         } else {
             return true;
         }

@@ -6,7 +6,6 @@ use PhpParser\Node;
 
 interface CheckerInterface
 {
-    public function isAcceptable($node);
     public function validate($node);
     public function getErrors();
 }
