@@ -18,6 +18,7 @@
           "src/printErrors.php",
           "src/checkers/CheckerInterface.php",
           "src/checkers/FunctionChecker.php",
+          "src/checkers/VarChecker.php",
           "src/filesystem.php"
         ]
   },

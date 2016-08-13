@@ -20,7 +20,7 @@ function getFilePathList($path)
                 }
             }
             closedir($handle);
-        } elseif (pathInfo($path) == 'php') {
+        } elseif (pathInfo($path)['extension'] == 'php') {
             $files[] = $path;
         }
            return $files;
