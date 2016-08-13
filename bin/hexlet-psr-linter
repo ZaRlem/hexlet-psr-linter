@@ -7,12 +7,14 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use function HexletPsrLinter\lint;
 use function HexletPsrLinter\getFilePath;
 use function HexletPsrLinter\printErrors;
+use function HexletPsrLinter\getFilePathList;
 
 $path = getFilePath()[0];
-if($path){
-    $code = file_get_contents($path);
+
+$filePathList = getFilePathList($path);
+
+foreach($filePathList as $pathToFile){
+    $code = file_get_contents($pathToFile);
+    $errors = lint($code);
+    printErrors($pathToFile, $errors);
 }
-
-$errors = lint($code);
-
-printErrors($path, $errors);
