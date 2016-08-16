@@ -21,10 +21,12 @@ class LinterTest extends \PHPUnit_Framework_TestCase
                 return $amount;
             }';
         $this->assertNull(lint($rightCode));
-        $this->assertContains([3,
+        $this->assertContains(
+            [3,
             'Warning',
             'Function names must be declared in camelCase.'],
-            lint($wrongCode));
+            lint($wrongCode)
+        );
     }
     public function testVarChecker()
     {
@@ -41,10 +43,12 @@ class LinterTest extends \PHPUnit_Framework_TestCase
                 return $am_ount;
             }';
         $this->assertNull(lint($rightCode));
-        $this->assertContains([5,
+        $this->assertContains(
+            [5,
             'Warning',
             'Variable names must be declared in camelCase.'],
-            lint($wrongCode));
+            lint($wrongCode)
+        );
     }
     public function testSideEffectsChecker()
     {
@@ -72,9 +76,11 @@ class LinterTest extends \PHPUnit_Framework_TestCase
             }
         ';
         $this->assertNull(lint($rightCode));
-        $this->assertContains([0,
+        $this->assertContains(
+            [0,
             'Warning',
             'Declaration of symbols and side effects in one file'],
-            lint($wrongCode));
+            lint($wrongCode)
+        );
     }
 }
