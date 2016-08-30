@@ -19,6 +19,9 @@
           "src/checkers/CheckerInterface.php",
           "src/checkers/FunctionChecker.php",
           "src/checkers/VarChecker.php",
+          "src/checkers/nodeCheckers.php",
+          "src/checkers/SideEffectsChecker.php",
+          "src/checkers/checkersList.php",
           "src/filesystem.php"
         ]
   },

@@ -5,7 +5,7 @@ namespace HexletPsrLinter;
 use PhpParser\Error;
 use PhpParser\ParserFactory;
 use PhpParser\NodeTraverser;
-use HexletPsrLinter\MyNodeVisitor;
+use HexletPsrLinter\NodeVisitor;
 
 function lint($code)
 {
