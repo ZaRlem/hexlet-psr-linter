@@ -5,18 +5,16 @@ function funcBig($a)
     return $a;
 }
 
-function funcSmallCafe($Case)
+function funcSmallCafe($case)
 {
-    echo "Some stirng";
-    return $Case;
+    return $case;
 }
-function funcBig($a)
+function funcBig2($a)
 {
     return $a;
 }
 
-function notFuncSmall($Case)
+function notFuncSmall($case)
 {
-    echo "Some stirng";
-    return $Case;
+    return $case;
 }

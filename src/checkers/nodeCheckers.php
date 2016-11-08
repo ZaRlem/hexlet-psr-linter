@@ -10,8 +10,8 @@ function check(Node $node)
     $sideEffectsFlag = false;
     $checkerList = getCheckersList();
 
-    foreach($checkerList as $key => $value) {
-        if($node instanceof $key) {
+    foreach ($checkerList as $key => $value) {
+        if ($node instanceof $key) {
             $checker = new $value;
         }
     }

@@ -7,7 +7,6 @@ use HexletPsrLinter\Checker\FunctionChecker;
 use HexletPsrLinter\Checker\VarChecker;
 use function HexletPsrLinter\Checker\check;
 
-
 class NodeVisitor extends NodeVisitorAbstract
 {
     private $errors = [];
@@ -15,7 +14,7 @@ class NodeVisitor extends NodeVisitorAbstract
 
     public function leaveNode(Node $node)
     {
-        if($error = check($node)) {
+        if ($error = check($node)) {
             $this->errors[] = $error;
         }
     }
